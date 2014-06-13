@@ -27,7 +27,7 @@ group :assets do
   gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -35,7 +35,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+ gem 'bcrypt-ruby', :require => "bcrypt"
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -48,3 +48,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# by me Guolei Sun
+gem 'execjs'
