@@ -1,7 +1,7 @@
 #source 'https://ruby.taobao.org'
 https://rubygems.org/
 
-gem 'rails', '~> 3.2.16'
+gem 'rails'
 gem 'rack', '~> 1.4.5'
 gem 'strong_parameters'
 
