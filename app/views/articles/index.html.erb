@@ -1,0 +1,22 @@
+<h2>Listing Articles</h2>
+
+<% if session[:user_id] != nil && session[:user_id] < 4 %>
+  <%= link_to 'New article', new_article_path %>
+<% end %>
+<table cellpadding="10" style="margin:auto;">
+  <tr>
+    <th>Title</th>
+    <th>Time</th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><b><%= link_to article.title, article_path(article) %></b></td>
+      <td><%= article.created_at.to_s(:short) %></td>
+      <% if session[:user_id] != nil && session[:user_id] < 4 %>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

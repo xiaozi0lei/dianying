@@ -1,0 +1,34 @@
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <% if session[:user_id] != nil %>
+      <%= session[:user_name] %>
+    <% else %>
+      noname
+    <% end %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit :onclick => 'return before_submit_check(session[:user_id])' %>
+  </p>
+<% end %>
+<script type="text/javascript" language="javascript">
+    function before_submit_check(input_id){
+//         alert("1");
+        var input = document.getElementById(input_id)
+//        alert(input.value);
+        if(input.value == "")
+        {
+            alert("login name can't blank !");
+            input.focus();
+//                      this
+            return false;
+        }else{
+//        this.submit();
+            return true;
+        }
+    }
+</script>

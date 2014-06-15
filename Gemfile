@@ -2,7 +2,7 @@ source 'https://ruby.taobao.org'
 
 gem 'rails', '~> 3.2.16'
 gem 'rack', '~> 1.4.5'
-gem 'jquery-rails'
+gem 'strong_parameters'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -19,6 +19,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'minitest'
   gem 'thor', '= 0.14.6'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 # Gems used only for assets and not required

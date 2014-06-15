@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html class="home  js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<html>
 <head>
   <title>虎 妞 网</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="index">
+<body>
 
+<div id="container">
+
+<!-- header block -->
+<div id="header">
   <div id="user_nav" style="text-align:right">
     <% if current_user %>
       <b><%= current_user.email %></b>
@@ -17,12 +21,57 @@
       <%= link_to "Log in", log_in_path %>
     <% end %>
   </div>
+</div>
 
+<!-- menu block -->
+<div id="menu" style="  position: absolute;
+  z-index: 0;
+  top: 50px;
+  right: 0;
+  background: #F0F0F0;
+  //background: #FFF;
+  padding: 1em 1.5em 1em 1.25em;
+  width: 10em;
+  font-size: 0.9285em;
+  color: red;
+  line-height: 1.3846em;
+  margin-right: 1em;">
+    123<br />
+    234<br />
+    234<br />
+    234<br />
+    234<br />
+    234<br />
+    234<br />
+    234<br />
+    234<br />
+    234<br />
+    sdf
+</div>
+
+<!-- content block -->
+<div id="content" style="
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 1em;">
+
+  <h1 style="text-align: left"><%= link_to '虎妞网', root_path %><h1>
+  
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
 
-<%= yield %>
+  <%= yield %>
+
+</div>
+
+<!-- footer block -->
+<div id="footer" style="text-align:center; padding: 5em">
+Copyleft
+</div>
+
+<!-- container end -->
+</div>
 
 </body>
 </html>
