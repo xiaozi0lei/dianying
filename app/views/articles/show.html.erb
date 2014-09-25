@@ -1,19 +1,21 @@
-<p>
-  <strong>Title:</strong>
+<p class="title_article">
   <%= @article.title %>
 </p>
- 
+
+<hr /> 
+
 <p>
-  <strong>Text:</strong>
-  <%= @article.text %>
+  <%= markdown(@article.text) %>
 </p>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
-
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
- 
+<br />
 <%= link_to 'Back to Articles', articles_path %>
 | <%= link_to 'Edit Article', edit_article_path(@article) %>
+
+<hr />
+
+<h4>Comments</h4>
+<%= render @article.comments %>
+
+<%= render "comments/form" %>
 

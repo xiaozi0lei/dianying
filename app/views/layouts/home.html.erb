@@ -8,7 +8,20 @@
 </head>
 <body class="index">
 
-<div id="container" class="">
+<div id="container">
+<!-- header block -->
+<div id="header">
+  <div id="user_nav" style="text-align:right">
+    <% if current_user %>
+      <b><%= current_user.email %></b>
+      <%= link_to "Log out", log_out_path %>
+    <% else %>
+      <%= link_to "Sign up", sign_up_path %> or 
+      <%= link_to "Log in", log_in_path %>
+    <% end %>
+  </div>
+</div>
+
 
 <%= yield %>
 
