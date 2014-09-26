@@ -6,6 +6,7 @@ gem 'rails','~> 3.2.16'
 gem 'rack', '~> 1.4.5'
 gem 'strong_parameters'
 gem 'redcarpet'
+gem 'coderay'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

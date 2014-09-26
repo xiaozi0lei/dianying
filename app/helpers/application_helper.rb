@@ -1,17 +1,25 @@
 module ApplicationHelper
 
+  class CodeRayify < Redcarpet::Render::HTML
+    def block_code(code, language)
+      #CodeRay.scan(code, language).div
+      CodeRay.scan(code, language).div(:line_numbers => :table)
+    end
+  end
+  
   def markdown(text)
-    renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)
+    coderayified = CodeRayify.new(:filter_html => true, 
+                                  :hard_wrap => true)
     options = {
-      autolink: true,
-      no_intra_emphasis: true,
-      fenced_code_blocks: true,
-      lax_html_blocks: true,
-      strikethrough: true,
-      superscript: true,
-      space_after_headers: true
+      :fenced_code_blocks => true,
+      :no_intra_emphasis => true,
+      :autolink => true,
+      :strikethrough => true,
+      :lax_html_blocks => true,
+      :superscript => true
     }
-    Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
+    markdown_to_html.render(text).html_safe
   end
 
 end

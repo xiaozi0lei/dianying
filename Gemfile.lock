@@ -129,6 +129,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby
+  coderay
   coffee-rails
   execjs
   jquery-rails
