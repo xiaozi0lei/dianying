@@ -10,6 +10,18 @@
 }
 
 body div#container div#content p.title_article{
+  text-align: center;
   font-size: 2em;
   color: black;
+}
+
+body div#container div#content p{
+  text-align: left;
+}
+
+body div#container div#content form.edit_article p input#article_title{
+  width: 80%;
+}
+body div#container div#content form.edit_article p textarea#article_text{
+  width: 100%;
 }

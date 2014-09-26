@@ -1,6 +1,5 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
-    <%= f.label :commenter %><br>
     <% if session[:user_id] != nil %>
       <%= session[:user_name] %>
     <% else %>
@@ -8,8 +7,7 @@
     <% end %>
   </p>
   <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :rows => "10" %>
   </p>
   <p>
     <%= f.submit :onclick => 'return before_submit_check(session[:user_id])' %>

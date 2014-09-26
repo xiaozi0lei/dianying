@@ -9,5 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require articles
+ *= require comments
  */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 150%;
+}
