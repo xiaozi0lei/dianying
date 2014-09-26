@@ -25,3 +25,13 @@ body div#container div#content form.edit_article p input#article_title{
 body div#container div#content form.edit_article p textarea#article_text{
   width: 100%;
 }
+
+body div#container div#content div#mainCol table.CodeRay{
+  width: 100%;
+  font-size: 150%;
+  background: none repeat scroll 0% 0% #F0F0F0;
+  text-align: left;
+}
+body div#container div#content div#mainCol p code{
+  font-size: 130%;
+}
