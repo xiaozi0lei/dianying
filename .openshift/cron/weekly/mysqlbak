@@ -1,0 +1,4 @@
+#!/bin/bash
+
+filedate=`date "+%Y%m"`
+mysqldump -h$OPENSHIFT_MYSQL_DB_HOST -u$OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD dianying > dianying-"$filedate".sql
