@@ -7,7 +7,7 @@
     <% end %>
   </p>
   <p>
-    <%= f.text_area :body, :rows => "10" %>
+  <%= f.text_area :body, :rows => "10", :style => "width: 100%" %>
   </p>
   <p>
     <%= f.submit :onclick => 'return before_submit_check(session[:user_id])' %>
