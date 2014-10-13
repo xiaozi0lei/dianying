@@ -6,7 +6,7 @@ gem 'rails','~> 3.2.16'
 gem 'rack', '~> 1.4.5'
 gem 'strong_parameters'
 gem 'redcarpet'
-gem "pygments.rb"
+gem 'pygments.rb'
 
 #gem 'coderay'
 
