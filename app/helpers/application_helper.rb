@@ -15,7 +15,10 @@ end
 
   def markdown(text)
 #    coderayified = CodeRayify.new(:filter_html => true,:hard_wrap => true)
-    coderayified = PygmentsHTML.new(:filter_html => true,:hard_wrap => true)
+    coderayified = PygmentsHTML.new(
+      with_toc_data: true,
+      hard_wrap: true
+    )
 #    coderayified = Redcarpet::Render::HTML.new(:filter_html => true,:hard_wrap => true)
     options = {
       :no_intra_emphasis => true,
