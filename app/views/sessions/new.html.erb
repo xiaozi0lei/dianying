@@ -5,6 +5,9 @@
 <h1>Log in</h1>
 
 <%= form_tag sessions_path do %>
+<% if flash.now[:alter] %>
+  <div class="alter"><%= flash.now[:alter] %></div>
+<% end %>
   <p>
     <%= label_tag :email %><br />
     <%= text_field_tag :email, params[:email] %>
@@ -13,5 +16,5 @@
     <%= label_tag :password %><br />
     <%= password_field_tag :password %>
   </p>
-  <p class="button"><%= submit_tag "Log in" %></p>
+  <p class="button"><%= submit_tag "Sign in" %></p>
 <% end %>
