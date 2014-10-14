@@ -26,6 +26,7 @@ group :development, :test do
   gem 'minitest'
   gem 'thor', '= 0.14.6'
   gem 'pry'
+  gem 'pry-nav'
   gem 'pry-rails'
 end
 

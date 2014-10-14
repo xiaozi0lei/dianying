@@ -5,9 +5,7 @@
 <h1>Log in</h1>
 
 <%= form_tag sessions_path do %>
-<% if flash.now[:alter] %>
-  <div class="alter"><%= flash.now[:alter] %></div>
-<% end %>
+  <h2 style="color: red"><%= flash.now[:alert] %></h2>
   <p>
     <%= label_tag :email %><br />
     <%= text_field_tag :email, params[:email] %>

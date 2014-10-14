@@ -66,6 +66,8 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pry-nav (0.2.3)
+      pry (~> 0.9.10)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     pygments.rb (0.6.0)
@@ -141,6 +143,7 @@ DEPENDENCIES
   mysql2
   pg
   pry
+  pry-nav
   pry-rails
   pygments.rb
   rack (~> 1.4.5)

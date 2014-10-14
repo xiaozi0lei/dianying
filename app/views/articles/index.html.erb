@@ -1,4 +1,4 @@
-<h2 class="text-center">Listing Articles</h2>
+<h2 class="text-center"><span class="glyphicon glyphicon-list"> Listing Articles</h2>
 
 <p>
 <% if session[:user_id] != nil && session[:user_id] < 4 %>
@@ -8,8 +8,8 @@
 
 <table class="table">
   <tr>
-    <th>Title</th>
-    <th>Time</th>
+    <th><span class="glyphicon glyphicon-star-empty"> Title</th>
+    <th><span class="glyphicon glyphicon-star-empty"> Time</th>
   </tr>
  
   <% @articles.each do |article| %>

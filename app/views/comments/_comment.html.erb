@@ -1,18 +1,23 @@
 <p>
-  <strong>Commenter:</strong>
+  <span class="glyphicon glyphicon-user">
   <%= comment.commenter %>
 </p>
  
 <p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
+  <span class="glyphicon glyphicon-comment">
+  <span style="background: #F5F5F5">
+    <%= comment.body %>
+  </span>
 </p>
 
+<br />
+
 <p>
-  Time:
+  <span class="glyphicon glyphicon-time">
   <%= comment.created_at %>
+</p>
 <p>
   <%= link_to 'Destroy Comment', [comment.article, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+               data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
 </p>

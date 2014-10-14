@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // add red color to error display
-#error_explanation {
+// 错误提示CSS
+.error_messages {
+  color: red
+}
+.field_with_errors {
   color: red;
 }
+// 错误提示CSS
