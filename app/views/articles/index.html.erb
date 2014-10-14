@@ -6,7 +6,10 @@
 <% end %>
 </p>
 
+<%= will_paginate(@articles, :prev_label=>'Previous', :next_label=>'Next', :separator=>" | ") %>
+
 <table class="table">
+
   <tr>
     <th><span class="glyphicon glyphicon-star-empty"> Title</th>
     <th><span class="glyphicon glyphicon-star-empty"> Time</th>
@@ -22,4 +25,7 @@
       <% end %>
     </tr>
   <% end %>
+
 </table>
+
+<%= will_paginate(@articles, :prev_label=>'Previous', :next_label=>'Next', :separator=>" | ") %>

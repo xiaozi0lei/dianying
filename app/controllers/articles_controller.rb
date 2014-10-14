@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   def index
 #    @user = User.find(params[:user][:id])
-    @articles = Article.order("created_at DESC").all
+    @articles = Article.paginate(:page => params[:page], :per_page => 10, :order => 'created_at DESC')
   end
 
   def create

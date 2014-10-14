@@ -129,6 +129,7 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    will_paginate (3.0.7)
     yajl-ruby (1.1.0)
 
 PLATFORMS
@@ -155,3 +156,4 @@ DEPENDENCIES
   therubyracer
   thor (= 0.14.6)
   uglifier (>= 1.0.3)
+  will_paginate

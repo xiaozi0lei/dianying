@@ -5,9 +5,14 @@ source 'https://rubygems.org'
 gem 'rails','~> 3.2.16'
 gem 'rack', '~> 1.4.5'
 gem 'strong_parameters'
+# redcarpet engine for markdown markup
 gem 'redcarpet'
+# highlight code
 gem 'pygments.rb'
+# paginate 分页
+gem 'will_paginate'
 
+# also highlight code
 #gem 'coderay'
 
 # Bundle edge Rails instead:
