@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   def index
 #    @user = User.find(params[:user][:id])
-    @articles = Article.all
+    @articles = Article.order("created_at DESC").all
   end
 
   def create
