@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       session[:user_name] = user.email
       session[:referer_url] = request.referer
-      binding.pry
       redirect_to session[:referer_url] || root_url
     else
       flash.now.alert = "Invalid email or password"
