@@ -1,4 +1,6 @@
 RailsApp::Application.routes.draw do
+  get "about/index"
+
   root :to => 'home#index'
   
   get "sessions/new"
@@ -16,6 +18,8 @@ RailsApp::Application.routes.draw do
   resources :articles do
     resources :comments
   end
+
+  get 'tags/:tag', to: 'articles#index', as: :tag
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

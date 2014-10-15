@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.16)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    acts-as-taggable-on (3.4.2)
+      activerecord (>= 3.2, < 5)
     arel (3.0.3)
     bcrypt (3.1.7)
     bcrypt-ruby (3.1.5)
@@ -136,6 +138,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   bcrypt-ruby
   coffee-rails
   execjs

@@ -11,6 +11,8 @@ gem 'redcarpet'
 gem 'pygments.rb'
 # paginate 分页
 gem 'will_paginate'
+# tags for articles classification文章分类
+gem 'acts-as-taggable-on'
 
 # also highlight code
 #gem 'coderay'

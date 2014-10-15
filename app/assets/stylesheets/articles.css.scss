@@ -4,10 +4,24 @@
 
 // add red color to error display
 // 错误提示CSS
+#error_explanation {
+  color: red
+}
 .error_messages {
   color: red
 }
 .field_with_errors {
-  color: red;
+  color: red
 }
 // 错误提示CSS
+
+// override bootstrap th td padding to 5px
+.blog-post th, td {
+  padding: 5px
+}
+// override bootstrap th td padding to 5px
+
+.css1 { font-size: 1.0em; }
+.css2 { font-size: 1.2em; }
+.css3 { font-size: 1.4em; }
+.css4 { font-size: 1.6em; }

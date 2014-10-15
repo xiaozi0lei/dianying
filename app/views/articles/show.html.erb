@@ -2,24 +2,39 @@
   <%= @article.title %>
 </h2>
 
+<!-- 3个返回,编辑,新建按钮 -->
 <%= link_to 'Back to Articles', articles_path, class: "btn btn-default" %>
 <% if session[:user_id] != nil && session[:user_id] < 4 %>
 | <%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-default" %>
 | <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
 <% end %>
+<!-- 3个返回,编辑,新建按钮 -->
 
 <hr />
 
+<!-- 文章正文 -->
 <%= markdown(@article.text) %>
 
+<hr />
+<!-- 标签 -->
+<p>
+Tags: 
+<% @article.tag_list.map do |t| %>
+  <%= link_to t, tag_path(t) %>
+<% end %>
+</p>
+
 <br />
+<!-- 3个返回,编辑,新建按钮 -->
 <%= link_to 'Back to Articles', articles_path, class: "btn btn-default" %>
 <% if session[:user_id] != nil && session[:user_id] < 4 %>
 | <%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-default" %>
 | <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
 <% end %>
+<!-- 3个返回,编辑,新建按钮 -->
 <hr />
 
+<!-- 此处为comment和comment form -->
 <h4>Comments <span class="glyphicon glyphicon-comment"></h4>
 <%= render @article.comments %>
 

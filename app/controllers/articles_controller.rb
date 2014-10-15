@@ -4,8 +4,14 @@ class ArticlesController < ApplicationController
   end
 
   def index
-#    @user = User.find(params[:user][:id])
-    @articles = Article.paginate(:page => params[:page], :per_page => 10, :order => 'created_at DESC')
+    # 获取所有的tags
+    tag_cloud
+    if params[:tag]
+      # 获取带有对应tag的文章,并按倒叙排列
+      @articles = Article.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10, :order => 'created_at DESC')
+    else
+      @articles = Article.paginate(:page => params[:page], :per_page => 10, :order => 'created_at DESC')
+    end
   end
 
   def create
@@ -43,9 +49,13 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def tag_cloud
+    @tags = Article.tag_counts_on(:tags)
+  end
+  
   private
     def article_params
-      params.require(:article).permit(:title, :text)
+      params.require(:article).permit(:title, :text, :tag_list)
     end
 
     def user_params
