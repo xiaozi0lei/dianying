@@ -18,7 +18,6 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      #binding.pry
       params[:comment][:commenter] = session[:user_name]
       params.require(:comment).permit(:commenter, :body)
     end
