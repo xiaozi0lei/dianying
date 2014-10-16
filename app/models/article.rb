@@ -5,4 +5,5 @@ class Article < ActiveRecord::Base
   validates :title, presence: true, length: {minimum: 1}
   acts_as_taggable
   acts_as_taggable_on :tags
+  mount_uploader :picture, PictureUploader
 end

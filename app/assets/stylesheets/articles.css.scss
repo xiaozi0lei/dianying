@@ -16,6 +16,8 @@
 // 错误提示CSS
 
 // override bootstrap th td padding to 5px
+.blog-post th { border-bottom: 1px solid #DDD; }
+
 .blog-post th, td {
   padding: 5px
 }

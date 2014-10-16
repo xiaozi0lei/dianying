@@ -13,6 +13,8 @@ gem 'pygments.rb'
 gem 'will_paginate'
 # tags for articles classification文章分类
 gem 'acts-as-taggable-on'
+# upload pictures
+gem 'carrierwave'
 
 # also highlight code
 #gem 'coderay'
