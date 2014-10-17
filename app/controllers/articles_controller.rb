@@ -8,9 +8,11 @@ class ArticlesController < ApplicationController
     tag_cloud
     if params[:tag]
       # 获取带有对应tag的文章,并按倒叙排列
-      @articles = Article.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10, :order => 'created_at DESC')
+      @articles1 = Article.where("user_id = 1").tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 15, :order => 'created_at DESC')
+      @articles2 = Article.where("user_id = 2").tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 15, :order => 'created_at DESC')
     else
-      @articles = Article.paginate(:page => params[:page], :per_page => 10, :order => 'created_at DESC')
+      @articles1 = Article.where("user_id = 1").paginate(:page => params[:page], :per_page => 15, :order => 'created_at DESC')
+      @articles2 = Article.where("user_id = 2").paginate(:page => params[:page], :per_page => 15, :order => 'created_at DESC')
     end
   end
 
@@ -55,7 +57,7 @@ class ArticlesController < ApplicationController
   
   private
     def article_params
-      params.require(:article).permit(:title, :text, :tag_list, :picture)
+      params.require(:article).permit(:title, :text, :tag_list, :picture, :user_id)
     end
 
     def user_params

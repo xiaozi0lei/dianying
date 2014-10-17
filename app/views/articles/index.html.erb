@@ -1,6 +1,15 @@
-<div class="col-md-10 blog-main">
+<!-- tags -->
+<p>
+<span class="btn btn-default">Tags</span>
+<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+  |
+  <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+<% end %>
+</p>
+
+<div class="col-md-6 blog-main">
   <div class="blog-post">
-    <h2 class="text-center"><span class="glyphicon glyphicon-list"> Listing Articles</h2>
+    <h2 class="text-center"><span class="glyphicon glyphicon-list"> XIAOBAO LI</h2>
 
     <p>
     <% if session[:user_id] != nil && session[:user_id] < 4 %>
@@ -8,17 +17,10 @@
     <% end %>
     </p>
 
-    <!-- tags -->
-    <p>
-    <span class="btn btn-default">Tags</span>
-    <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-      <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
-      |
-    <% end %>
-    </p>
+
 
     <!-- 分页 -->
-    <%= will_paginate(@articles, :prev_label=>'Previous', :next_label=>'Next', :separator=>" | ") %>
+    <%= will_paginate(@articles1, :prev_label=>'Previous', :next_label=>'Next', :separator=>" | ") %>
 
     <table class="table">
 
@@ -27,26 +29,28 @@
         <th><span class="glyphicon glyphicon-star-empty"> Time</th>
       </tr>
      
-      <% @articles.each do |article| %>
+      <% @articles1.each do |article| %>
         <tr>
           <td><b><%= link_to article.title, article_path(article) %></b></td>
           <td><%= article.created_at.to_s(:short) %></td>
+        <!--
           <% if session[:user_id] != nil && session[:user_id] < 4 %>
             <td><%= link_to 'Edit', edit_article_path(article) %></td>
             <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
           <% end %>
+        -->
         </tr>
       <% end %>
 
     </table>
 
     <!-- 分页 -->
-    <%= will_paginate(@articles, :prev_label=>'Previous', :next_label=>'Next', :separator=>" | ") %>
+    <%= will_paginate(@articles1, :prev_label=>'Previous', :next_label=>'Next', :separator=>" | ") %>
 
   </div>
 </div>
 
-<!-- 边栏 -->
+<!-- 边栏 
 <div class="col-md-2 text-right">
   <button class="btn btn-default">Articles Tags</button>
   <br />
@@ -54,4 +58,47 @@
     <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
     <br />
   <% end %>
+</div>
+-->
+
+<!-- DABAO&&XIAOBAO split -->
+<div class="col-md-6 blog-main">
+  <div class="blog-post">
+    <h2 class="text-center"><span class="glyphicon glyphicon-list"> DABAO SUN</h2>
+
+    <p>
+    <% if session[:user_id] != nil && session[:user_id] < 4 %>
+      <a href="<%= new_article_path %>"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star"></span> New Article </button></a>
+    <% end %>
+    </p>
+
+    <!-- 分页 -->
+    <%= will_paginate(@articles2, :prev_label=>'Previous', :next_label=>'Next', :separator=>" | ") %>
+
+    <table class="table">
+
+      <tr>
+        <th><span class="glyphicon glyphicon-star-empty"> Title</th>
+        <th><span class="glyphicon glyphicon-star-empty"> Time</th>
+      </tr>
+     
+      <% @articles2.each do |article| %>
+        <tr>
+          <td><b><%= link_to article.title, article_path(article) %></b></td>
+          <td><%= article.created_at.to_s(:short) %></td>
+          <!--
+          <% if session[:user_id] != nil && session[:user_id] < 4 %>
+            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+            <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          <% end %>
+          -->
+        </tr>
+      <% end %>
+
+    </table>
+
+    <!-- 分页 -->
+    <%= will_paginate(@articles2, :prev_label=>'Previous', :next_label=>'Next', :separator=>" | ") %>
+
+  </div>
 </div>
