@@ -3,14 +3,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if $previous_url.nil?
-      $previous_url = request.referer
-    end
+#if $previous_url.nil?
+#      $previous_url = request.referer
+#    end
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
       session[:user_name] = user.email
-      redirect_to $previous_url || root_url
+      redirect_to :back
+#redirect_to $previous_url || root_url
     else
       flash.now.alert = "Invalid email or password"
       render "new"
@@ -19,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    $previous_url = nil
+#    $previous_url = nil
     redirect_to root_url, :notice => "Logged out!"
   end
 end
