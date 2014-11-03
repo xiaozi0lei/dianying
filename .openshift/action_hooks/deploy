@@ -19,9 +19,9 @@ if [ ! -z "$OPENSHIFT_POSTGRESQL_DB_HOST" ]; then
   export RAILS_DB="postgresql"
 fi
 
-if [ ! -z "$OPENSHIFT_MYSQL_DB_HOST" ]; then
-  export RAILS_DB="mysql"
-fi
+#if [ ! -z "$OPENSHIFT_MYSQL_DB_HOST" ]; then
+#  export RAILS_DB="mysql"
+#fi
 
 if [ -z "$RAILS_DB" ]; then
   echo 1>&2
