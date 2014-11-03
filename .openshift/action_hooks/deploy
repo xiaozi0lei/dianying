@@ -19,6 +19,14 @@ if [ ! -z "$OPENSHIFT_POSTGRESQL_DB_HOST" ]; then
   export RAILS_DB="postgresql"
 fi
 
+echo 
+echo "------"
+echo $PATH
+echo $RAILS_DB
+echo ${RAILS_ENV:-production}
+echo "------"
+echo 
+
 #if [ ! -z "$OPENSHIFT_MYSQL_DB_HOST" ]; then
 #  export RAILS_DB="mysql"
 #fi
