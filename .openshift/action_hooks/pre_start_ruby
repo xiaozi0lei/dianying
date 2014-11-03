@@ -21,7 +21,7 @@ if ! [ "$(type -t set_env_var)" == "function" ]; then
     export RAILS_DB="postgresql"
   fi
 
-  if [ ! -z "$OPENSHIFT_MYSQL_DB_HOST" ]; then
-    export RAILS_DB="mysql"
-  fi
+  #if [ ! -z "$OPENSHIFT_MYSQL_DB_HOST" ]; then
+  #  export RAILS_DB="mysql"
+  #fi
 fi
