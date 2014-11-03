@@ -17,6 +17,12 @@
 # set the RAILS_DB using export.
 #
 if ! [ "$(type -t set_env_var)" == "function" ]; then
+
+  echo "------"
+  echo $SHELL
+  echo "$(type -t set_env_var)"
+  echo "------"
+
   if [ ! -z "$OPENSHIFT_POSTGRESQL_DB_HOST" ]; then
     export RAILS_DB="postgresql"
   fi
