@@ -5,19 +5,21 @@
  
 <p>
   <span class="glyphicon glyphicon-comment">
-  <span style="background: #F5F5F5">
-    <%= comment.body %>
-  </span>
+  <%= markdown(comment.body) %>
 </p>
 
 <br />
 
 <p>
   <span class="glyphicon glyphicon-time">
-  <%= comment.created_at %>
+  <%= comment.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
 </p>
+
 <p>
   <%= link_to 'Destroy Comment', [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
 </p>
+
+<hr />
+

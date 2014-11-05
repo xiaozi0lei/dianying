@@ -7,12 +7,13 @@
     <% end %>
   </p>
   <p>
-  <%= f.text_area :body, :rows => "10", :style => "width: 100%" %>
+    <%= f.text_area :body, :rows => "10", :style => "width: 100%" %>
   </p>
   <p>
     <%= f.submit :onclick => 'return before_submit_check(session[:user_id])', class: "btn btn-default" %>
   </p>
 <% end %>
+
 <script type="text/javascript" language="javascript">
     function before_submit_check(input_id){
 //         alert("1");
