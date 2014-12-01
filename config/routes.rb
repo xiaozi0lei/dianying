@@ -1,4 +1,7 @@
 RailsApp::Application.routes.draw do
+  resources :pictures
+
+
   get "about/index"
 
   root :to => 'home#index'
