@@ -31,7 +31,11 @@
      
       <% @articles1.each do |article| %>
         <tr>
-          <td><b><%= link_to article.title, article_path(article) %></b></td>
+          <% if article.sticky == true %>
+            <td class="success"><b><%= link_to article.title, article_path(article) %></b></td>
+          <% else %>
+            <td><b><%= link_to article.title, article_path(article) %></b></td>
+          <% end %>
           <td><%= article.created_at.to_s(:short) %></td>
         <!--
           <% if session[:user_id] != nil && session[:user_id] < 3 %>
@@ -84,7 +88,11 @@
      
       <% @articles2.each do |article| %>
         <tr>
-          <td><b><%= link_to article.title, article_path(article) %></b></td>
+          <% if article.sticky == true %>
+            <td class="success"><b><%= link_to article.title, article_path(article) %></b></td>
+          <% else %>
+            <td><b><%= link_to article.title, article_path(article) %></b></td>
+          <% end %>
           <td><%= article.created_at.to_s(:short) %></td>
           <!--
           <% if session[:user_id] != nil && session[:user_id] < 3 %>
