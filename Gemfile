@@ -13,8 +13,16 @@ gem 'pygments.rb'
 gem 'will_paginate'
 # tags for articles classification文章分类
 gem 'acts-as-taggable-on'
-# upload pictures
+# upload pictures and resize to 200x200
 gem 'carrierwave'
+# need ImageMagick-devel installed in the server, let's try
+gem "rmagick"
+
+# friendly URL format instead of the number id
+gem 'friendly_id'
+
+# simple form with bootstrap easily
+gem 'simple_form'
 
 # also highlight code
 #gem 'coderay'
