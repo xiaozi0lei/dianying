@@ -2,9 +2,10 @@ class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     if session[:user_id] == nil
-        redirect_to article_path(@article), :notice => "Please log in to comment."
+        redirect_to article_path(@article), :notice => "Please Sign in to comment."
     else
       @comment = @article.comments.create(comment_params)
+      current_user.send_message(@article.user, comment_params[:body], comment_params[:commenter])
       redirect_to article_path(@article)
     end
   end

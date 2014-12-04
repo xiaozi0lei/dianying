@@ -1,18 +1,35 @@
-<!--
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
--->
-<h1>Log in</h1>
+<h3 class="text-center" style="color: Orange">
+  <%= flash[:notice] %>
+</h3>
+<h1 class="text-center">Sign In</h1>
+<h3 class="text-center" style="color: red">
+  <%= flash.now[:error] %>
+</h3>
 
-<%= form_tag sessions_path do %>
-  <h2 style="color: red"><%= flash.now[:alert] %></h2>
-  <p>
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %>
+<%= form_for :session, url: sessions_path, :html => { class: "form-horizontal" } do |f| %>
+
+  <div class="form-group">
+    <div class="col-md-2 col-md-offset-3">
+      <%= f.label :email, class: "btn btn-default" %>
+    </div>
+    <div class="col-md-4">
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-2 col-md-offset-3">
+      <%= f.label :password, class: "btn btn-default" %>
+    </div>
+    <div class="col-md-4">
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+  </div>
+
+  <p class="text-center">
+    <%= f.submit "Sign In", class: "btn btn-success" %>
   </p>
-  <p>
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </p>
-  <p><%= submit_tag "Sign in",  :class => "btn btn-success" %></p>
+  <p class="text-center">New user? <%= link_to "Sign up now!", sign_up_path %></p>
+
 <% end %>
+

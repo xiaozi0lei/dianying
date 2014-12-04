@@ -3,18 +3,29 @@
 <%= markdown("
 Someting I want to say.
 
-* [Redcarpet](https://github.com/vmg/redcarpet) 
-* [pygments.rb](https://github.com/tmm1/pygments.rb)
-* [will_paginate](https://github.com/mislav/will_paginate)
-* [ActsAsTaggableOn](https://github.com/mbleigh/acts-as-taggable-on)
-* [CarrierWave](https://github.com/carrierwaveuploader/carrierwave), [railscast](http://railscasts.com/episodes/253-carrierwave-file-uploads?view=asciicast)
-* [FriendlyId](https://github.com/norman/friendly_id)
-* [Simple Form](https://github.com/plataformatec/simple_form)
-* []()
+Gem | Description
+--- | ---
+[Redcarpet](https://github.com/vmg/redcarpet) | 用来支持Markdown语法
+[pygments.rb](https://github.com/tmm1/pygments.rb) | 用来支持语法高亮
+[will_paginate](https://github.com/mislav/will_paginate) | 用来分页
+[ActsAsTaggableOn](https://github.com/mbleigh/acts-as-taggable-on) | 用来对文章分类, 加tag
+[CarrierWave](https://github.com/carrierwaveuploader/carrierwave), [railscast](http://railscasts.com/episodes/253-carrierwave-file-uploads?view=asciicast) | 用来上传图片, 调整图片大小
+[FriendlyId](https://github.com/norman/friendly_id) | 用来生成友好的URL. \"If you're adding FriendlyId to an existing app and need to generate slugs for existing users, do this from the console, runner, or add a Rake task:\" `Article.find_each(&:save)`
+[Simple Form](https://github.com/plataformatec/simple_form) | 用来简化和美化form表单
+[]()
 
 ***
 
 **Update History:**
+
+20141204
+  * Fix picture URL overlap
+    ```javascript
+    style=\"word-break:break-all;\"
+    ```
+
+  * Add the [Mailboxer]() gem to implement comment notification
+  * Change Sign In and Sign Up form style
 
 20141202
   * Add the [FriendlyId](http://railscasts.com/episodes/314-pretty-urls-with-friendlyid?view=asciicast) gem to format the human URL

@@ -1,27 +1,18 @@
-<div class="row">
-  <div class="col-md-2">
-    <% if session[:user_id] != nil && session[:user_id] < 3 %>
-      <%= link_to "Add Picture", new_picture_path, class: "btn btn-default btn-lg" %>
+<% if session[:user_id] != nil && session[:user_id] < 3 %>
+  <%= link_to "Add Picture", new_picture_path, class: "btn btn-default btn-lg" %>
+<% end %>
+
+<% @pictures.in_groups_of(4) do |group| %>
+  <div style="word-break:break-all;" class="row">
+    <% group.compact.each do |picture| %>
+      <div class="col-md-3">
+        <%= link_to (image_tag picture.picture_url, :width => '100%'), picture if picture.picture.present?%>
+        <h4><%= link_to picture.name, picture %></h4>
+        <div>
+        <%= picture.picture_url(:thumb) %>
+      </div>
+      </div>
     <% end %>
   </div>
-
-  <div class="col-md-8">
-    <div>
-      <% @pictures.in_groups_of(4) do |group| %>
-          <% group.compact.each do |picture| %>
-            <div class="col-md-3">
-              <%= link_to (image_tag picture.picture_url, :width => '100%'), picture if picture.picture.present?%>
-              <h4><%= link_to picture.name, picture %></h4>
-              <p>
-              <%= picture.picture_url(:thumb).to_s %>
-              </p>
-            </div>
-          <% end %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="col-md-1">
-  </div>
-</div>
+<% end %>
 

@@ -24,6 +24,8 @@ gem 'friendly_id'
 # simple form with bootstrap easily
 gem 'simple_form'
 
+# comment notifications
+gem "mailboxer"
 # also highlight code
 #gem 'coderay'
 
@@ -40,13 +42,34 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'minitest'
+  # avoid the warning message, restrict the 4.x version
+  gem 'minitest', '~> 4.7.5'
   gem 'thor', '= 0.14.6'
+  # debug tool awesome
   gem 'pry'
   gem 'pry-nav'
   gem 'pry-rails'
+  # integeration testing with rspec framework
+  gem 'rspec-rails', '~> 3.0'
+  # spring server to save the test time
+  # gem 'spring'
+  # gem 'spring-commands-rspec'
+  # auto test tool
+  #gem 'guard'
+  gem 'guard-rspec'
+  # run a server in the background, save the test rime. Same as spring.
+  gem 'spork'
+  # guard support spork
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
+group :test do
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  # prepare data for testing
+  gem 'factory_girl_rails'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
