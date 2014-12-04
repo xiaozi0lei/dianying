@@ -41,7 +41,6 @@ group :production, :postgresql do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   # avoid the warning message, restrict the 4.x version
   gem 'minitest', '~> 4.7.5'
   gem 'thor', '= 0.14.6'
