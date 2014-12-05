@@ -14,7 +14,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     # for openshift
-    "${OPENSHIFT_DATA_DIR}/uploads/#{model.class.to_s.underscore}"
+    "#{ENV[OPENSHIFT_DATA_DIR]}/uploads/#{model.class.to_s.underscore}"
     # for development
     #"uploads/#{model.class.to_s.underscore}"
   end
