@@ -17,7 +17,8 @@
 
 <p>
   <b>Path:</b>
-  <%= @picture.picture_url(:thumb) %>
+  <% @picture.picture_url(:thumb) =~ /data/ %>
+  <%= $' %>
 </p>
 
 

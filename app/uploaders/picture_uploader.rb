@@ -14,9 +14,9 @@ class PictureUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     # for openshift
-    "#{ENV['OPENSHIFT_DATA_DIR']}/uploads/#{model.class.to_s.underscore}"
+    "#{ENV['OPENSHIFT_DATA_DIR']}/uploads/#{model.class.to_s.underscore}/#{model.id}"
     # for development
-    #"uploads/#{model.class.to_s.underscore}"
+    #"uploads/#{model.class.to_s.underscore}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

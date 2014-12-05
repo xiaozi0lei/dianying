@@ -27,9 +27,9 @@ gem 'simple_form'
 # comment notifications
 gem 'mailboxer'
 
-group :production, :mysql do
-  gem 'mysql2'
-end
+#group :production, :mysql do
+#  gem 'mysql2'
+#end
 
 group :production, :postgresql do
   gem 'pg'
@@ -79,7 +79,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
- gem 'bcrypt-ruby', :require => "bcrypt"
+gem 'bcrypt-ruby', :require => "bcrypt"
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
