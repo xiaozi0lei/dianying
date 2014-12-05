@@ -3,8 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if $previous_url.nil?
-      $previous_url = request.referer
+    
+    if session[:return_to].nil?
+      session[:return_to] = request.referer
     end
 
     if params[:session][:email].empty? || params[:session][:password].empty?

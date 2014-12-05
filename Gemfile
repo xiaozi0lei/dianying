@@ -27,12 +27,6 @@ gem 'simple_form'
 # comment notifications
 gem 'mailboxer'
 
-# also highlight code
-#gem 'coderay'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 group :production, :mysql do
   gem 'mysql2'
 end
