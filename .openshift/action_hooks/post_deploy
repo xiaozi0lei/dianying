@@ -3,7 +3,7 @@
 # is deployed and started.  This script gets executed directly, so 
 # it could be python, php, ruby, etc.
 
-if [-d "${OPENSHIFT_DATA_DIR}/uploads" ]; then
+if [ -d "${OPENSHIFT_DATA_DIR}/uploads" ]; then
   echo "Restoring stored pictures"
   cp -r "${OPENSHIFT_DATA_DIR}/uploads" "${OPENSHIFT_REPO_DIR}/public"
 fi

@@ -10,7 +10,7 @@ class Picture < ActiveRecord::Base
 
     def get_picture_url
       # for openshift begin
-      self.picture_url(:thumb) =~ /public/
+      self.picture_url(:thumb) =~ /picture/
       FileUtils.cp_r($`,"#{Rails.root}/public/")
       # for openshift end
       #self[:path] = self.picture_url(:thumb)
