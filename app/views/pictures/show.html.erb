@@ -12,7 +12,8 @@
 
 <p>
   <b>Picture:</b>
-  <%= image_tag(@picture.picture_url, :width => 600) if @picture.picture.present? %>
+  <% @picture.picture_url =~ /data/ %>
+  <%= image_tag($', :width => 600) if @picture.picture.present? %>
 </p>
 
 <p>
