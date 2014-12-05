@@ -1,7 +1,8 @@
 class Picture < ActiveRecord::Base
+  # mount_uploader method must be called before after_save method.
+  mount_uploader :picture, PictureUploader
   after_save :get_picture_url
   attr_accessible :description, :name, :path, :picture
-  mount_uploader :picture, PictureUploader
 
   private
 
