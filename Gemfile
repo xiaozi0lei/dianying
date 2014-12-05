@@ -25,7 +25,8 @@ gem 'friendly_id'
 gem 'simple_form'
 
 # comment notifications
-gem "mailboxer"
+gem 'mailboxer'
+
 # also highlight code
 #gem 'coderay'
 
