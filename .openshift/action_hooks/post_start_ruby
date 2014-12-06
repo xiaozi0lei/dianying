@@ -13,4 +13,4 @@
 # Application start and stop is subject to different timeouts
 # throughout the system.
 
-cd ${OPENSHIFT_REPO_DIR} && bundle exec rake sunspot:solr:start RAILS_ENV=production
+#cd ${OPENSHIFT_REPO_DIR} && bundle exec rake sunspot:solr:start RAILS_ENV=production

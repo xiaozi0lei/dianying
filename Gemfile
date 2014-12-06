@@ -28,7 +28,7 @@ gem 'simple_form'
 gem 'mailboxer'
 
 # full text-search
-gem 'sunspot_rails'
+#gem 'sunspot_rails'
 #gem 'sunspot_solr'
 
 #group :production, :mysql do
