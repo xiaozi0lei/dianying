@@ -207,7 +207,7 @@ GEM
     sunspot_rails (2.0.0)
       nokogiri
       sunspot (= 2.0.0)
-    sunspot_solr (2.1.1)
+    sunspot_solr (2.0.0)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -260,7 +260,7 @@ DEPENDENCIES
   spork
   strong_parameters
   sunspot_rails (= 2.0.0)
-  sunspot_solr
+  sunspot_solr (= 2.0.0)
   therubyracer
   thor (= 0.14.6)
   uglifier (>= 1.0.3)
