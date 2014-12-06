@@ -27,6 +27,9 @@ gem 'simple_form'
 # comment notifications
 gem 'mailboxer'
 
+# full text-search
+gem 'sunspot_rails'
+
 #group :production, :mysql do
 #  gem 'mysql2'
 #end
@@ -56,6 +59,8 @@ group :development, :test do
   # guard support spork
   gem 'guard-spork'
   gem 'childprocess'
+  # full text-search development envi
+  gem 'sunspot_solr'
 end
 
 group :test do

@@ -1,0 +1,49 @@
+<!-- tags -->
+<p>
+<span class="btn btn-default col-md-offset-3">Tags</span>
+<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+  |
+  <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+<% end %>
+</p>
+
+<div class="col-md-8 col-md-offset-1 blog-main">
+  <div class="blog-post">
+    <table class="table">
+      <tr>
+        <th><span class="glyphicon glyphicon-star-empty"> Title</th>
+        <th><span class="glyphicon glyphicon-star-empty"> Time</th>
+      </tr>
+     
+      <% @articles.each do |article| %>
+        <tr>
+          <% if article.sticky == true %>
+            <td class="success"><b><%= link_to article.title, article_path(article) %></b></td>
+          <% else %>
+            <td><b><%= link_to article.title, article_path(article) %></b></td>
+          <% end %>
+          <td><%= article.created_at.to_s(:short) %></td>
+        </tr>
+      <% end %>
+
+    </table>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div id="facets">
+    <h3>Articles List</h3>
+    <ul>
+      <% @search.facet(:publish_month).rows.each do |row| %>
+        <li>
+          <% if params[:month].blank? %>
+            <%= link_to row.value, :month => row.value %> (<%= row.count %>)
+          <% else %>
+            <strong><%= row.value %></strong> (<%= link_to "Back", :month => nil %>)
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

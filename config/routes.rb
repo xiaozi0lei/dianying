@@ -4,6 +4,7 @@ RailsApp::Application.routes.draw do
   
   get "about/index"
   get "home/index"
+  get "articles/search"
 
   get "sign_up" => "users#new", :as => "sign_up"
   get "sign_in" => "sessions#new", :as => "sign_in"

@@ -1,48 +1,66 @@
-<h2 class="blog-post-title text-center">
-  <%= @article.title %>
-</h2>
+<div class="col-md-9">
+  <h2 class="blog-post-title text-center">
+    <%= @article.title %>
+  </h2>
+  
+  <!-- 3个返回,编辑,新建按钮 -->
+  <%= link_to 'Back to Articles', articles_path, class: "btn btn-default" %>
+  <% if session[:user_id] != nil && session[:user_id] < 3 %>
+    <%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-default" %>
+    <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
+    <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
+  <% end %>
+  <!-- 3个返回,编辑,新建按钮 -->
+  
+  <!-- 图片
+  <%= image_tag(@article.picture_url, :width => 600) if @article.picture.present? %>
+   -->
+  
+  <hr />
+  
+  <!-- 文章正文 -->
+  <%= markdown(@article.text) %>
+  
+  <hr />
+  <!-- 标签 -->
+  <p>
+  Tags: 
+  <% @article.tag_list.map do |t| %>
+    <%= link_to t, tag_path(t) %>
+  <% end %>
+  </p>
+  
+  <br />
+  <!-- 3个返回,编辑,新建按钮 -->
+  <%= link_to 'Back to Articles', articles_path, class: "btn btn-default" %>
+  <% if session[:user_id] != nil && session[:user_id] < 3 %>
+    <%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-default" %>
+    <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
+    <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
+  <% end %>
+  <!-- 3个返回,编辑,新建按钮 -->
+  <hr />
+  
+  <!-- 此处为comment和comment form -->
+  <h4>Comments <span class="glyphicon glyphicon-comment"></h4>
+  <%= render @article.comments %>
+  
+  <%= render "comments/form" %>
+</div>
 
-<!-- 3个返回,编辑,新建按钮 -->
-<%= link_to 'Back to Articles', articles_path, class: "btn btn-default" %>
-<% if session[:user_id] != nil && session[:user_id] < 3 %>
-  <%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-default" %>
-  <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
-  <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
-<% end %>
-<!-- 3个返回,编辑,新建按钮 -->
-
-<!-- 图片
-<%= image_tag(@article.picture_url, :width => 600) if @article.picture.present? %>
- -->
-
-<hr />
-
-<!-- 文章正文 -->
-<%= markdown(@article.text) %>
-
-<hr />
-<!-- 标签 -->
-<p>
-Tags: 
-<% @article.tag_list.map do |t| %>
-  <%= link_to t, tag_path(t) %>
-<% end %>
-</p>
-
-<br />
-<!-- 3个返回,编辑,新建按钮 -->
-<%= link_to 'Back to Articles', articles_path, class: "btn btn-default" %>
-<% if session[:user_id] != nil && session[:user_id] < 3 %>
-  <%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-default" %>
-  <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
-  <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
-<% end %>
-<!-- 3个返回,编辑,新建按钮 -->
-<hr />
-
-<!-- 此处为comment和comment form -->
-<h4>Comments <span class="glyphicon glyphicon-comment"></h4>
-<%= render @article.comments %>
-
-<%= render "comments/form" %>
-
+<div class="col-md-3">
+  <div id="facets">
+    <h3>Article List</h3>
+    <ul>
+      <% @search.facet(:publish_month).rows.each do |row| %>
+        <li>
+          <% if params[:month].blank? %>
+            <%= link_to row.value, articles_search_path(:month => row.value) %> (<%= row.count %>)
+          <% else %>
+            <strong><%= row.value %></strong> (<%= link_to "Back", :month => nil %>)
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

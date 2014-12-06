@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    search
     @article = Article.find(params[:id])
     if request.path != article_path(@article)
       redirect_to @article, status: :moved_permanently
@@ -56,6 +57,17 @@ class ArticlesController < ApplicationController
 
   def tag_cloud
     @tags = Article.tag_counts_on(:tags)
+  end
+
+  def search
+    tag_cloud
+    @search = Article.search do
+      fulltext params[:search]
+      facet(:publish_month)
+      with(:publish_month, params[:month]) if params[:month].present?
+      paginate :page => 1, :per_page => 300
+    end
+    @articles = @search.results
   end
   
   private

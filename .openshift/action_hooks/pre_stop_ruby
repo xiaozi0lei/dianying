@@ -12,3 +12,7 @@
 # prevent your application from stopping cleanly or starting at all.
 # Application start and stop is subject to different timeouts
 # throughout the system.
+
+cd ${OPENSHIFT_REPO_DIR} && bundle exec rake sunspot:solr:stop RAILS_ENV=production
+
+killall java
