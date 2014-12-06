@@ -14,6 +14,7 @@
 /log/*.log
 /tmp
 .project
+Gemfile.lock
 *.swp
 /public
 /solr
