@@ -29,7 +29,7 @@ gem 'mailboxer'
 
 # full text-search
 gem 'sunspot_rails'
-#gem 'sunspot_solr'
+gem 'sunspot_solr'
 
 #group :production, :mysql do
 #  gem 'mysql2'
