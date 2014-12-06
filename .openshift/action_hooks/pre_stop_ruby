@@ -14,6 +14,6 @@
 # throughout the system.
 
 # cd ${OPENSHIFT_REPO_DIR} && bundle exec rake sunspot:solr:stop RAILS_ENV=production
-if [ ps aux | grep java ]; then
+if [ ps aux | grep -v grep | grep java ]; then
   killall java
 fi
