@@ -29,6 +29,7 @@ gem 'mailboxer'
 
 # full text-search
 gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 #group :production, :mysql do
 #  gem 'mysql2'
@@ -59,8 +60,6 @@ group :development, :test do
   # guard support spork
   gem 'guard-spork'
   gem 'childprocess'
-  # full text-search development envi
-  gem 'sunspot_solr'
 end
 
 group :test do
