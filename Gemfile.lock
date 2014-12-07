@@ -201,13 +201,14 @@ GEM
       activemodel (~> 3.0)
       activesupport (~> 3.0)
       railties (~> 3.0)
-    sunspot (2.0.0)
+    sunspot (2.1.1)
       pr_geohash (~> 1.0)
       rsolr (~> 1.0.7)
-    sunspot_rails (2.0.0)
+    sunspot_rails (2.1.1)
       nokogiri
-      sunspot (= 2.0.0)
-    sunspot_solr (2.0.0)
+      rails (>= 3)
+      sunspot (= 2.1.1)
+    sunspot_solr (2.1.1)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -259,8 +260,8 @@ DEPENDENCIES
   simple_form
   spork
   strong_parameters
-  sunspot_rails (= 2.0.0)
-  sunspot_solr (= 2.0.0)
+  sunspot_rails
+  sunspot_solr
   therubyracer
   thor (= 0.14.6)
   uglifier (>= 1.0.3)

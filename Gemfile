@@ -28,8 +28,8 @@ gem 'simple_form'
 gem 'mailboxer'
 
 # full text-search
-gem 'sunspot_rails', '2.0.0'
-gem 'sunspot_solr', '2.0.0'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 #group :production, :mysql do
 #  gem 'mysql2'
