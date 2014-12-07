@@ -1,6 +1,6 @@
 production:
   solr:
-    hostname: localhost
+    hostname: <%=ENV['OPENSHIFT_RUBY_IP']%>
     port: 8983
     log_level: WARNING
     path: /solr/default
