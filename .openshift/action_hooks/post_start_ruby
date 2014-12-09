@@ -13,6 +13,6 @@
 # Application start and stop is subject to different timeouts
 # throughout the system.
 
-if (cd ${OPENSHIFT_REPO_DIR} && bundle exec rake sunspot:solr:start -b $OPENSHIFT_RUBY_IP RAILS_ENV=production); then
-  echo "Start solr successfully."
+if (cd ${OPENSHIFT_REPO_DIR} && bundle exec sunspot-solr start -b $OPENSHIFT_RUBY_IP RAILS_ENV=production); then
+  echo "4. ------ Start solr successfully ------"
 fi

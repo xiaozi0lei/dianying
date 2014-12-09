@@ -20,10 +20,9 @@ if [ ! -z "$OPENSHIFT_POSTGRESQL_DB_HOST" ]; then
 fi
 
 echo 
-echo "------"
-echo $PATH
-echo $RAILS_DB
-echo ${RAILS_ENV:-production}
+echo "2. ------"
+echo "database: $RAILS_DB"
+echo "environment: ${RAILS_ENV:-production}"
 echo "------"
 echo 
 

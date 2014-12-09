@@ -13,6 +13,6 @@
 # Application start and stop is subject to different timeouts
 # throughout the system.
 
-if (cd ${OPENSHIFT_REPO_DIR} && bundle exec rake sunspot:solr:stop RAILS_ENV=production); then
-  echo "Stop solr successfully."
+if (cd ${OPENSHIFT_REPO_DIR} && bundle exec sunspot-solr stop RAILS_ENV=production); then
+  echo "1. ------ Stop solr successfully ------"
 fi

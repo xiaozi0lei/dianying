@@ -18,8 +18,8 @@
 #
 if ! [ "$(type -t set_env_var)" == "function" ]; then
 
-  echo "------"
-  echo $SHELL
+  echo "3. ------"
+  echo "shell: $SHELL"
   echo "$(type -t set_env_var)"
   echo "------"
 
@@ -27,6 +27,7 @@ if ! [ "$(type -t set_env_var)" == "function" ]; then
     export RAILS_DB="postgresql"
   fi
 
+  # disable the mysql database for using postgresql
   #if [ ! -z "$OPENSHIFT_MYSQL_DB_HOST" ]; then
   #  export RAILS_DB="mysql"
   #fi

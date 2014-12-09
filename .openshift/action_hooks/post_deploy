@@ -4,7 +4,7 @@
 # it could be python, php, ruby, etc.
 
 if [ -d "${OPENSHIFT_DATA_DIR}/uploads" ]; then
-  echo "Restoring stored pictures"
+  echo "5. ------ Restoring stored pictures ------"
   cp -r "${OPENSHIFT_DATA_DIR}/uploads" "${OPENSHIFT_REPO_DIR}/public"
 fi
 
