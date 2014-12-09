@@ -1,8 +1,13 @@
 <div class="col-md-9">
+  <!-- title -->
   <h2 class="blog-post-title text-center">
     <%= @article.title %>
   </h2>
   
+  <p class="text-center">
+  <%= @article.created_at.strftime("%B %e %k:%M - %Y") %>
+  </p>
+
   <!-- 3个返回,编辑,新建按钮 -->
   <%= link_to 'Back to Articles', articles_path, class: "btn btn-default" %>
   <% if session[:user_id] != nil && session[:user_id] < 3 %>
@@ -11,10 +16,6 @@
     <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
   <% end %>
   <!-- 3个返回,编辑,新建按钮 -->
-  
-  <!-- 图片
-  <%= image_tag(@article.picture_url, :width => 600) if @article.picture.present? %>
-   -->
   
   <hr />
   
@@ -50,6 +51,7 @@
 
 <div class="col-md-3">
   <div id="facets">
+
     <h3>Article List</h3>
     <ul>
       <% @search.facet(:publish_month).rows.each do |row| %>
@@ -62,5 +64,16 @@
         </li>
       <% end %>
     </ul>
+
+    <h3>Article Category</h3>
+    <ul>
+      <% tag_cloud(@tags, %w(css1 css2)) do |tag, css_class| %>
+        <li>
+          <%= link_to tag.name, tag_path(tag.name), :class => css_class %> (<%= tag.count %>)
+        </li>
+      <% end %>
+    </ul>
+
   </div>
 </div>
+

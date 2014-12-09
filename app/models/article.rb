@@ -14,7 +14,8 @@ class Article < ActiveRecord::Base
 
   # FriendlyId for URL human format
   extend FriendlyId
-  friendly_id :title, use: [:slugged, :history]
+  #friendly_id :title, use: [:slugged, :history]
+  friendly_id :title
 
   # full-text search
   searchable do
