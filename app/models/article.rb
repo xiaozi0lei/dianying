@@ -15,7 +15,10 @@ class Article < ActiveRecord::Base
   # FriendlyId for URL human format
   extend FriendlyId
   #friendly_id :title, use: [:slugged, :history]
-  friendly_id :title
+  friendly_id :title, use: :slugged
+  def normalize_friendly_id(input)
+    input.to_s.to_slug.normalize.to_s
+  end
 
   # full-text search
   searchable do
