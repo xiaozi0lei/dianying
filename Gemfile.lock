@@ -197,6 +197,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    stringex (2.5.2)
     strong_parameters (0.2.3)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -261,6 +262,7 @@ DEPENDENCIES
   selenium-webdriver
   simple_form
   spork
+  stringex
   strong_parameters
   sunspot_rails
   sunspot_solr

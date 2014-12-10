@@ -33,6 +33,9 @@ gem 'mailboxer'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
+# translate chinese url to engilsh
+gem 'stringex'
+
 #group :production, :mysql do
 #  gem 'mysql2'
 #end

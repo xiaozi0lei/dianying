@@ -16,8 +16,9 @@ class Article < ActiveRecord::Base
   extend FriendlyId
   #friendly_id :title, use: [:slugged, :history]
   friendly_id :title, use: :slugged
+
   def normalize_friendly_id(input)
-    input.to_s.to_slug.normalize.to_s
+    input.to_s.to_url.to_slug.normalize.to_s
   end
 
   # full-text search
