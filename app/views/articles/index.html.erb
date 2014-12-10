@@ -34,7 +34,7 @@
           <% if article.sticky == true %>
             <td class="success"><b><%= link_to article.title, article_path(article) %></b></td>
           <% else %>
-            <td><b><%= link_to article.title, article_path(article) %></b></td>
+            <td><%= link_to article.title, article_path(article) %></td>
           <% end %>
           <td><%= article.created_at.to_s(:short) %></td>
         <!--
@@ -91,7 +91,7 @@
           <% if article.sticky == true %>
             <td class="success"><b><%= link_to article.title, article_path(article) %></b></td>
           <% else %>
-            <td><b><%= link_to article.title, article_path(article) %></b></td>
+            <td><%= link_to article.title, article_path(article) %></td>
           <% end %>
           <td><%= article.created_at.to_s(:short) %></td>
           <!--
