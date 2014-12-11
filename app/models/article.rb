@@ -18,7 +18,7 @@ class Article < ActiveRecord::Base
   friendly_id :title, use: :slugged
 
   def normalize_friendly_id(input)
-    input.to_s.to_url.to_slug.normalize.to_s
+    input.to_s.to_url
   end
 
   # full-text search

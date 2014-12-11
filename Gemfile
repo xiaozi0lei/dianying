@@ -21,7 +21,7 @@ gem "rmagick"
 # friendly URL format instead of the number id
 gem 'friendly_id'
 # help frienly ID to solve the chinese
-gem 'babosa'
+#gem 'babosa'
 
 # simple form with bootstrap easily
 gem 'simple_form'
