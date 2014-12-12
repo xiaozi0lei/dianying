@@ -65,6 +65,8 @@ group :development, :test do
   # guard support spork
   gem 'guard-spork'
   gem 'childprocess'
+  # generate test metric
+  gem 'metric_fu'
 end
 
 group :test do
