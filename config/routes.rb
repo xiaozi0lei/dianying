@@ -1,7 +1,6 @@
 RailsApp::Application.routes.draw do
 
   root :to => 'home#index'
-  
   get "about/index"
   get "home/index"
   get "articles/search"
