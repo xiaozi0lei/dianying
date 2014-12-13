@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     else
       user = User.authenticate(params[:session][:email].downcase, params[:session][:password])
     end
-    
+
     if user
       sign_in user
       #session[:user_id] = user.id

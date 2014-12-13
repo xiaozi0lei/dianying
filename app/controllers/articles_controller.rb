@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-   
+
     if @article.update_attributes(article_params)
       redirect_to @article
     else
@@ -75,7 +75,4 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :text, :tag_list, :picture, :user_id, :sticky)
     end
 
-    def user_params
-      params.require(:user).permit(:email, :password)
-    end
 end
