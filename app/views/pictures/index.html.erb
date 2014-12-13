@@ -7,7 +7,7 @@
     <% group.compact.each do |picture| %>
       <div class="col-md-3">
         <% picture.picture_url =~ /data/ %>
-        <%= link_to (image_tag $', :width => '100%'), picture if picture.picture.present?%>
+        <%= link_to (image_tag $', :width => '100%'), picture if picture.picture?%>
         <h4><%= link_to picture.name, picture %></h4>
         <div>
         <% picture.picture_url(:thumb) =~ /data/ %>

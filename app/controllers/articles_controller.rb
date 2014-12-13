@@ -69,7 +69,7 @@ class ArticlesController < ApplicationController
     end
     @articles = @search.results
   end
-  
+
   private
     def article_params
       params.require(:article).permit(:title, :text, :tag_list, :picture, :user_id, :sticky)
