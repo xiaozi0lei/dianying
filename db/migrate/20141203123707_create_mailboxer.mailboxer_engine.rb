@@ -1,6 +1,6 @@
 # This migration comes from mailboxer_engine (originally 20110511145103)
 class CreateMailboxer < ActiveRecord::Migration
-  def self.up    
+  def self.up
   #Tables
   	#Conversations
     create_table :mailboxer_conversations do |t|

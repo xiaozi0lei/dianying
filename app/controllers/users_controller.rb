@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     conversation = @user.mailbox.inbox.first
     @receipts = conversation.receipts_for @user unless conversation.nil?
   end
-  
+
   def create
     @user = User.new(user_params)
     if @user.save

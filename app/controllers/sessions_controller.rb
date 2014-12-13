@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    
+
     if session[:return_to].nil?
       session[:return_to] = request.referer
     end

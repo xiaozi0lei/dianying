@@ -15,9 +15,9 @@
     <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
   <% end %>
   <!-- 3个返回,编辑,新建按钮 -->
-  
+
   <hr />
-  
+
   <!-- 文章正文 -->
   <%= markdown(@article.text) %>
   
