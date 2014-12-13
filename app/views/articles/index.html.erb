@@ -10,7 +10,6 @@
 <div class="col-md-6 blog-main">
   <div class="blog-post">
     <h2 class="text-center"><span class="glyphicon glyphicon-list"> XIAOBAO LI</h2>
-
     <p>
     <% if session[:user_id] != nil && session[:user_id] < 3 %>
       <a href="<%= new_article_path %>"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star"></span> New Article </button></a>
