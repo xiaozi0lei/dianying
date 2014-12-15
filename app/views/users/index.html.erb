@@ -1,0 +1,17 @@
+<div class="col-md-8 col-md-offset-2">
+  <table class="table">
+
+    <tr>
+      <th><span class="glyphicon glyphicon-star-empty"> User</th>
+      <th><span class="glyphicon glyphicon-star-empty"> Time</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.name, user_path(user) %></td>
+        <td><%= user.created_at.to_s(:short) %></td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>
+

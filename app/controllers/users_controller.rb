@@ -2,6 +2,7 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:edit, :update]
   before_filter :correct_user, only: [:edit, :update]
+  before_filter :admin_user, only: [:index, :destroy]
 
   def new
     unless current_user.nil?
@@ -9,6 +10,10 @@ class UsersController < ApplicationController
       redirect_to current_user
     end
     @user = User.new
+  end
+
+  def index
+    @users = User.all
   end
 
   def show
@@ -42,6 +47,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    redirect_to users_path
+  end
+
   private
 
   def user_params
@@ -58,6 +70,14 @@ class UsersController < ApplicationController
   def correct_user
     @user = User.find(params[:id])
     redirect_to(root_path) unless current_user?(@user)
+  end
+
+  def admin_user
+    if current_user.nil?
+      redirect_to root_path
+    else current_user[:id] > 3
+      redirect_to current_user
+    end
   end
 
 end

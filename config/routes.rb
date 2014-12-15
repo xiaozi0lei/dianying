@@ -10,10 +10,10 @@ RailsApp::Application.routes.draw do
   get "sign_out" => "sessions#destroy", :as => "sign_out"
 
   resources :users
-  resources :sessions
+  resources :sessions, only: [:create, :destroy]
   resources :pictures
   resources :articles do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
 
   get 'tags/:tag', to: 'articles#index', as: :tag

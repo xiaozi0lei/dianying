@@ -47,7 +47,7 @@ class PicturesController < ApplicationController
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
         format.json { render json: @picture, status: :created, location: @picture }
       else
-        format.html { render action: "new" }
+        format.html { render 'new' }
         format.json { render json: @picture.errors, status: :unprocessable_entity }
       end
     end
@@ -63,7 +63,7 @@ class PicturesController < ApplicationController
         format.html { redirect_to @picture, notice: 'Picture was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render 'edit' }
         format.json { render json: @picture.errors, status: :unprocessable_entity }
       end
     end

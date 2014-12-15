@@ -35,8 +35,8 @@ class CreateMailboxer < ActiveRecord::Migration
       t.boolean :global, default: false
       t.datetime :expires
     end
-    
-    
+
+
   #Indexes
   	#Conversations
   	#Receipts
@@ -44,7 +44,7 @@ class CreateMailboxer < ActiveRecord::Migration
 
   	#Messages  
   	add_index "mailboxer_notifications","conversation_id"
-  
+
   #Foreign keys    
   	#Conversations
   	#Receipts
@@ -52,7 +52,7 @@ class CreateMailboxer < ActiveRecord::Migration
   	#Messages  
   	add_foreign_key "mailboxer_notifications", "mailboxer_conversations", :name => "notifications_on_conversation_id", :column => "conversation_id"
   end
-  
+
   def self.down
   #Tables  	
   	remove_foreign_key "mailboxer_receipts", :name => "receipts_on_notification_id"
