@@ -45,7 +45,7 @@
   <h4>Comments <span class="glyphicon glyphicon-comment"></h4>
   <%= render @article.comments %>
 
-  <%= render "comments/form" %>
+  <%= render "comments/form", article: @article %>
 </div>
 
 <div class="col-md-3">

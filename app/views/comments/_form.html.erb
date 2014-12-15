@@ -1,4 +1,4 @@
-<%= form_for([@article, @article.comments.build]) do |f| %>
+<%= form_for([article, article.comments.build]) do |f| %>
   <p>
     <% if session[:user_id] != nil %>
       <%= session[:user_name] %>
