@@ -36,6 +36,9 @@ gem 'sunspot_solr'
 # translate chinese url to engilsh
 gem 'stringex'
 
+# Google Analytics
+gem 'google-analytics-rails'
+
 #group :production, :mysql do
 #  gem 'mysql2'
 #end

@@ -75,7 +75,7 @@ class UsersController < ApplicationController
   def admin_user
     if current_user.nil?
       redirect_to root_path
-    else current_user[:id] > 3
+    elsif current_user[:id] > 3
       redirect_to current_user
     end
   end
