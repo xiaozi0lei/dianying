@@ -1,9 +1,12 @@
 class Article < ActiveRecord::Base
 
-  attr_accessible :text, :title, :tag_list, :picture, :user_id, :sticky
+  attr_accessible :text, :title, :tag_list, :picture, :user_id, :sticky, :impressionable_type, :impressionable_id, :controller_name, :action_name, :user_id, :request_hash, :session_hash, :ip_address, :referrer
   belongs_to :user
   has_many :comments, dependent: :destroy
   validates :title, presence: true, length: {minimum: 1}
+
+  # track the article action visit counter
+  is_impressionable :counter_cache => true, :unique => false
 
   # seperate articles to different tags
   acts_as_taggable

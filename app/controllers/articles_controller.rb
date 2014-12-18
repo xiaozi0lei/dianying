@@ -1,9 +1,14 @@
 class ArticlesController < ApplicationController
+
   def new
     @article = Article.new
   end
 
   def index
+    # Add the index page count to the first article
+    impressionist Article.find(1)
+    # Get the total visit times
+    @article_sum = Article.sum :impressions_count
     # 获取所有的tags
     tag_cloud
     if params[:tag]
@@ -29,6 +34,8 @@ class ArticlesController < ApplicationController
   def show
     search
     @article = Article.find(params[:id])
+    # track article action visit counter
+    impressionist(@article)
     if request.path != article_path(@article)
       redirect_to @article, status: :moved_permanently
     end

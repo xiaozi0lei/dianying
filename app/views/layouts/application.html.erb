@@ -5,11 +5,14 @@
   <!-- adapte various devises -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- bootstrap css -->
-  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <% if Rails.env.production? %>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <% else %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <% end %>
   <!-- jumbotron css
-  -->
   <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron/jumbotron.css">
-
+  -->
   <!-- rails css js link -->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -120,7 +123,8 @@
 
   <!-- footer -->
   <footer class="text-center">
-    <p class="btn btn-default"><span class="glyphicon glyphicon-ok"><%= link_to "Markdown语法说明", "http://markdown.tw/" %><span class="glyphicon glyphicon-ok">
+    <p class="btn btn-default">
+        <%= link_to "Markdown语法说明", "http://markdown.tw/" %>
     </p>
     <p>Copyleft</p>
   </footer>
@@ -130,7 +134,11 @@
 
   <!-- bootstrap js and ie10 workaround
   -->
-  <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <% if Rails.env.production? %>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <% else %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <% end %>
   <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

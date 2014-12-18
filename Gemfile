@@ -39,6 +39,9 @@ gem 'stringex'
 # Google Analytics
 gem 'google-analytics-rails'
 
+# log the action visit counter
+gem 'impressionist', '= 1.2.0'
+
 #group :production, :mysql do
 #  gem 'mysql2'
 #end
