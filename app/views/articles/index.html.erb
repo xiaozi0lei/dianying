@@ -10,11 +10,13 @@
 </p>
 
 <!-- articles list -->
+<% count = 1 %>
 <% [ @articles1, @articles2 ].each do |articles| %>
   <div class="col-md-6 blog-main">
     <div class="blog-post">
-      <% if articles.first.user_id == 1 %>
+      <% if count == 1 %>
         <h2 class="text-center"><span class="glyphicon glyphicon-list"> XIAOBAO LI</h2>
+        <% count += 1 %>
       <% else %>
         <h2 class="text-center"><span class="glyphicon glyphicon-list"> DABAO SUN</h2>
       <% end %>
