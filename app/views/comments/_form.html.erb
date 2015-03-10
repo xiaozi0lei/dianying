@@ -3,31 +3,14 @@
     <% if session[:user_id] != nil %>
       <%= session[:user_name] %>
     <% else %>
-      noname
+      <%= f.text_field :commenter %>
     <% end %>
   </p>
   <p>
     <%= f.text_area :body, :rows => "10", :style => "width: 100%" %>
   </p>
   <p>
-    <%= f.submit :onclick => 'return before_submit_check(session[:user_id])', class: "btn btn-default" %>
+    <%= f.submit class: "btn btn-default" %>
   </p>
 <% end %>
 
-<script type="text/javascript" language="javascript">
-    function before_submit_check(input_id){
-//         alert("1");
-        var input = document.getElementById(input_id)
-//        alert(input.value);
-        if(input.value == "")
-        {
-            alert("login name can't blank !");
-            input.focus();
-//  this
-            return false;
-        }else{
-//        this.submit();
-            return true;
-        }
-    }
-</script>
