@@ -11,6 +11,10 @@
 <% unless @receipts_array.nil? %>
   <% @receipts_array.each do |receipts| %>
     <% receipts.each do |receipt| %>
+      <hr />
+      Time:
+      <%= receipt.created_at.time %>
+      <br />
       <b style="color: green;">message:</b>
       <br />
       Sender: 
