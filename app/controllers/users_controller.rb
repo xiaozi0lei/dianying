@@ -18,8 +18,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    conversation = @user.mailbox.inbox.first
-    @receipts = conversation.receipts_for @user unless conversation.nil?
+    conversation = @user.mailbox.inbox.all
+    @receipts_array = Array.new
+    unless conversation.nil?
+      conversation.each do |cs|
+        receipt = cs.receipts_for @user
+        @receipts_array << receipt
+      end
+    end
   end
 
   def create

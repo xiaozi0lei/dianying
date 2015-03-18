@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+  before_filter :permission_check, only: [ :new, :create, :edit, :update, :destroy ]
+
   def new
     @article = Article.new
   end
@@ -78,6 +80,13 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+    def permission_check
+      if current_user.nil? || current_user.id > 2
+        redirect_to articles_path
+      end
+    end
+
     def article_params
       params.require(:article).permit(:title, :text, :tag_list, :picture, :user_id, :sticky)
     end
