@@ -13,8 +13,8 @@
     <%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-default" %>
     <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
     <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
-  <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=ce1438ee-4c74-40f7-9dc6-56743cc45b6b&style=1&bp=weixin,qzone,sinaminiblog,facebook,twitter,linkedin,clipboard,renren,qqmb,qqim"></script>
   <% end %>
+  <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=ce1438ee-4c74-40f7-9dc6-56743cc45b6b&style=1&bp=weixin,qzone,sinaminiblog,facebook,twitter,linkedin,clipboard,renren,qqmb,qqim"></script>
   <!-- 返回,编辑,新建,删除,分享按钮 -->
 
   <hr />
@@ -23,6 +23,7 @@
   <%= markdown(@article.text) %>
 
   <hr />
+  <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=ce1438ee-4c74-40f7-9dc6-56743cc45b6b&style=2&bp=weixin,qzone,sinaminiblog,facebook,twitter,linkedin,clipboard,renren,qqmb,qqim"></script>
   <!-- 标签 -->
   <p>
   Tags:
@@ -39,7 +40,6 @@
     <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
     <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
   <% end %>
-  <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=ce1438ee-4c74-40f7-9dc6-56743cc45b6b&style=2&bp=weixin,qzone,sinaminiblog,facebook,twitter,linkedin,clipboard,renren,qqmb,qqim"></script>
   <!-- 返回,编辑,新建,删除,分享按钮 -->
   <hr />
 
