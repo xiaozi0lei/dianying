@@ -8,6 +8,9 @@
   <% if Rails.env.production? %>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <% else %>
+    <!--
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <% end %>
   <!-- jumbotron css
@@ -132,6 +135,7 @@
           <span style="color: yellow">网</span>
       </a>
       <%= link_to "Markdown语法说明", "http://markdown.tw/", class: "btn btn-success" %>
+      <%= link_to "阮一峰Blog", "http://www.ruanyifeng.com", class: "btn btn-success" %>
     </p>
     <p>
       · <a href="https://github.com/xiaozi0lei">Github</a> ·

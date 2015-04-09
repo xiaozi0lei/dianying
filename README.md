@@ -5,13 +5,16 @@ Quickstart rails application for openshift.
 配置sunspot注意事项：
 sunspot_solr默认是在开发的时候使用的，如果需要在生产环境用这个gem自带的solr server，需要注意配置文件中(RAILS_PATH/config/sunspot.xml，这个配置文件我推测是指导sunspot_rails连接solr的配置)的一些细节
 
-start solr
+start solr:
+
 rake sunspot:solr:start
 
-stop solr
+stop solr:
+
 rake sunspot:solr:stop
 
-reindex solr
+reindex solr:
+
 rake sunspot:solr:reindex
 
 

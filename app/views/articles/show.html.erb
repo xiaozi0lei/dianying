@@ -7,14 +7,15 @@
   <%= @article.created_at.strftime("%B %e %k:%M - %Y") %>
   </p>
 
-  <!-- 3个返回,编辑,新建按钮 -->
+  <!-- 返回,编辑,新建,删除,分享按钮 -->
   <%= link_to 'Back to Articles', articles_path, class: "btn btn-default" %>
   <% if session[:user_id] != nil && session[:user_id] < 3 %>
     <%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-default" %>
     <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
     <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
+  <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=ce1438ee-4c74-40f7-9dc6-56743cc45b6b&style=1&bp=weixin,qzone,sinaminiblog,facebook,twitter,linkedin,clipboard,renren,qqmb,qqim"></script>
   <% end %>
-  <!-- 3个返回,编辑,新建按钮 -->
+  <!-- 返回,编辑,新建,删除,分享按钮 -->
 
   <hr />
 
@@ -31,14 +32,15 @@
   </p>
 
   <br />
-  <!-- 3个返回,编辑,新建按钮 -->
+  <!-- 返回,编辑,新建,删除,分享按钮 -->
   <%= link_to 'Back to Articles', articles_path, class: "btn btn-default" %>
   <% if session[:user_id] != nil && session[:user_id] < 3 %>
     <%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-default" %>
     <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
     <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
   <% end %>
-  <!-- 3个返回,编辑,新建按钮 -->
+  <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=ce1438ee-4c74-40f7-9dc6-56743cc45b6b&style=2&bp=weixin,qzone,sinaminiblog,facebook,twitter,linkedin,clipboard,renren,qqmb,qqim"></script>
+  <!-- 返回,编辑,新建,删除,分享按钮 -->
   <hr />
 
   <!-- 此处为comment和comment form -->
