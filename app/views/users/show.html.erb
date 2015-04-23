@@ -21,7 +21,7 @@
       <%= receipt.message.subject %>
       <br />
       Content: 
-      <%= receipt.message.body %>
+      <%= markdown(receipt.message.body) %>
       <br />
       read: 
       <%= receipt.is_read? %>
