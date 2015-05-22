@@ -16,6 +16,7 @@
 /* padding the fix top nav bar */
 body {
   padding-top: 70px;
+  background: #EDEDED;
 }
 
 // 代码高亮CSS

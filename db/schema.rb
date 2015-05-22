@@ -145,7 +145,6 @@ ActiveRecord::Schema.define(:version => 20141218080246) do
   end
 
   add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], :name => "taggings_idx", :unique => true
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], :name => "taggings_tag_id_taggable_id_taggable_type_context_tagger_id_key", :unique => true
   add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
   create_table "tags", :force => true do |t|
@@ -154,7 +153,6 @@ ActiveRecord::Schema.define(:version => 20141218080246) do
   end
 
   add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
-  add_index "tags", ["name"], :name => "tags_name_key", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "name"
