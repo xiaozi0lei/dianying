@@ -1,5 +1,22 @@
-# Rails Sample App on OpenShift #
-Quickstart rails application for openshift.
+# 虎妞网个人blog #
+
+**系统**
+Ubuntu 14.04
+
+**start**
+
+1. `git clone git@github.com:xiaozi0lei/dianying.git`
+2. `sudo apt-get install postgresql libpq-dev ImageMagick libmagickcore-dev libmagickwand-dev default-jre`
+3. `cd dianying; bundle install`
+4. `sudo vi /etc/postgresql/9.3/main/pg_hba.conf`
+  update the `local   all             postgres                                peer` to `local   all             postgres                                trust`
+5. `sudo service postgresql restart`
+6. `echo "ALTER USER postgres WITH PASSWORD 'postgres'" | psql -U postgres`
+7. `source bin/dev_env`
+8. `rake db:create`
+9. `rake db:migrate`
+10. `rake sunspot:solr:start`
+11. `rails s`
 
 
 配置sunspot注意事项：

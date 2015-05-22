@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 
   def index
     # Add the index page count to the first article
-    impressionist Article.find(1)
+    impressionist Article.find(1) if Article.first
     # Get the total visit times
     @article_sum = Article.sum :impressions_count
     # 获取所有的tags
