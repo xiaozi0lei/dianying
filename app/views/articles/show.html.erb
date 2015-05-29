@@ -47,7 +47,9 @@
   <h4>Comments <span class="glyphicon glyphicon-comment"></h4>
   <%= render @article.comments %>
 
-  <%= render "comments/form", article: @article %>
+  <% if session[:user_id] != nil %>
+    <%= render "comments/form", article: @article %>
+  <% end %>
 </div>
 
 <div class="col-md-3">
