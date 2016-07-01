@@ -17,3 +17,6 @@
 *.swp
 /public
 /solr
+
+# Ignore application configuration
+/config/application.yml

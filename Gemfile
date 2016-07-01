@@ -41,6 +41,10 @@ gem 'google-analytics-rails'
 
 # log the action visit counter
 gem 'impressionist', '= 1.2.0'
+# Omniauth for the github account login
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'figaro'
 
 #group :production, :mysql do
 #  gem 'mysql2'

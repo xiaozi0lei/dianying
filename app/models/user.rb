@@ -1,18 +1,20 @@
 class User < ActiveRecord::Base
   acts_as_messageable
-  before_save { email.downcase! }
-  attr_accessible :email, :name, :password, :password_confirmation
+  before_save { if email; email.downcase! ; end }
+  attr_accessible :email, :name, :password, :password_confirmation, :provider, :uid
 
   attr_accessor :password
   before_save :encrypt_password
 
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
-  validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
-  validates :password, length: { minimum: 6 }
-  validates_uniqueness_of :email
+
+  # 判断是否为Oauth2登陆
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, :if => :password_required?
+  validates_confirmation_of :password, :if => :password_required?
+  validates_presence_of :password, :on => :create, :if => :password_required?
+  validates :password, length: { minimum: 6 }, :if => :password_required?
+  validates_uniqueness_of :email, :if => :password_required?
   validates_uniqueness_of :name
 
   has_many :articles, dependent: :destroy
@@ -37,6 +39,16 @@ class User < ActiveRecord::Base
   # Returns the name of the user
   def mailboxer_name
     return "#{name}"
+  end
+
+  def self.create_from_omniauth(auth_hash)
+    self.create(provider: auth_hash[:provider],
+              uid: auth_hash[:uid],
+              name: auth_hash[:info][:name])
+  end
+
+  def password_required?
+    provider.blank?
   end
 
 end

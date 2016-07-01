@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141218080246) do
+ActiveRecord::Schema.define(:version => 20160630075138) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -161,6 +161,8 @@ ActiveRecord::Schema.define(:version => 20141218080246) do
     t.string   "password_salt"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", name: "mb_opt_outs_on_conversations_id", column: "conversation_id"

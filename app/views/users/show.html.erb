@@ -1,5 +1,7 @@
 <h1>
-<%= gravatar_for @user %>
+<% if !@user.email.nil? %>
+  <%= gravatar_for @user %>
+<% end %>
 <%= @user.name %>
 </h1>
 <h3 class="text-center" style="color: green">

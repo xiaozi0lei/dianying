@@ -1,13 +1,14 @@
 RailsApp::Application.routes.draw do
 
   root :to => 'home#index'
-  get "about/index"
-  get "home/index"
-  get "articles/search"
+  get 'about/index'
+  get 'home/index'
+  get 'articles/search'
 
-  get "sign_up" => "users#new", :as => "sign_up"
-  get "sign_in" => "sessions#new", :as => "sign_in"
-  get "sign_out" => "sessions#destroy", :as => "sign_out"
+  get 'sign_up' => 'users#new', :as => 'sign_up'
+  get 'sign_in' => 'sessions#new', :as => 'sign_in'
+  get 'sign_out' => 'sessions#destroy', :as => 'sign_out'
+  get '/auth/github/callback' => 'sessions#create', :as => 'github_login'
 
   resources :users
   resources :sessions, only: [:create, :destroy]
