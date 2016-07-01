@@ -55,3 +55,4 @@ cd app-root/repo; bundle exec rake sunspot:solr:reindex RAILS_ENV=production
 
 3. 重启Rails程序，使配置生效
 
+4. 需要在config目录下创建application.yml，添加github的id和key，重启app
