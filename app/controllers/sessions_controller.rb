@@ -7,14 +7,14 @@ class SessionsController < ApplicationController
       session[:return_to] = request.referer
     end
 
-    if request.env['REQUEST_PATH'] == "/auth/github/callback"
-      user = User.find_by_provider_and_uid(auth_hash[:provider], auth_hash[:uid]) || User.create_from_omniauth(auth_hash)
-    else
+    if auth_hash.nil?
       if params[:session][:email].empty? || params[:session][:password].empty?
         user = nil
       else
         user = User.authenticate(params[:session][:email].downcase, params[:session][:password])
       end
+    else
+      user = User.find_by_provider_and_uid(auth_hash[:provider], auth_hash[:uid]) || User.create_from_omniauth(auth_hash)
     end
 
     if user
